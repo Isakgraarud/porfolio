@@ -14,6 +14,7 @@
 }
 
 /* Stagger children for sequential reveal */
+.animate-on-scroll.stagger-children .degree-item,
 .animate-on-scroll.stagger-children .course-item,
 .animate-on-scroll.stagger-children .gallery-item {
   opacity: 0;
@@ -22,6 +23,7 @@
               transform var(--duration-slow) var(--ease-out-expo);
 }
 
+.animate-on-scroll.stagger-children .degree-item.is-visible,
 .animate-on-scroll.stagger-children .course-item.is-visible,
 .animate-on-scroll.stagger-children .gallery-item.is-visible {
   opacity: 1;

@@ -22,18 +22,38 @@ async function initDynamicContent() {
     document.getElementById('bio-intro').innerText = data.about.intro;
     document.getElementById('bio-story').innerText = data.about.story;
 
-    // 2. Fill in the Education List
-    const educationContainer = document.querySelector('.course-list');
-    if (educationContainer) {
-      educationContainer.innerHTML = ''; // Clear the placeholders
-      data.education.forEach(item => {
+    // 2. Fill in the Education List (expandable degrees with courses)
+    const degreeList = document.getElementById('degree-list');
+    if (degreeList && data.education) {
+      degreeList.innerHTML = '';
+      data.education.forEach((degree, index) => {
         const li = document.createElement('li');
-        li.className = 'course-item';
+        li.className = 'degree-item';
+        const courses = degree.courses || [];
+        const panelId = `courses-degree-${index}`;
+        const chevron = '<span class="degree-chevron" aria-hidden="true">›</span>';
         li.innerHTML = `
-          <span class="course-name">${item.name}</span>
-          <span class="course-meta">${item.meta}</span>
+          <button type="button" class="degree-header" aria-expanded="false" aria-controls="${panelId}">
+            <span class="degree-name">${degree.name}</span>
+            <span class="degree-meta">${degree.meta}</span>
+            ${chevron}
+          </button>
+          <ul class="course-list course-list--nested" id="${panelId}">
+            ${courses.map((c) => `
+              <li class="course-item">
+                <span class="course-name">${c.name}</span>
+                <span class="course-meta">${c.meta}</span>
+              </li>
+            `).join('')}
+          </ul>
         `;
-        educationContainer.appendChild(li);
+        const header = li.querySelector('.degree-header');
+        header.addEventListener('click', () => {
+          const isExpanded = header.getAttribute('aria-expanded') === 'true';
+          header.setAttribute('aria-expanded', !isExpanded);
+          li.classList.toggle('is-expanded', !isExpanded);
+        });
+        degreeList.appendChild(li);
       });
     }
 
@@ -111,7 +131,7 @@ function initScrollAnimations() {
 
           // Optional: observe children with stagger
           const children = entry.target.querySelectorAll(
-            '.course-item, .gallery-item'
+            '.degree-item, .course-item, .gallery-item'
           );
           if (children.length) {
             children.forEach((child, index) => {

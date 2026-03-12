@@ -1,7 +1,7 @@
 {
   "about": {
-    "intro": "I am a second-year Data Technology student at the University of Bergen with a background in Air Force operations.",
-    "story": "My experience in the Air Force taught me to solve technical problems under pressure with precision and structure. I am now applying that discipline to programming and system understanding, motivated to develop practical solutions through collaboration and rapid learning."
+  "intro": "Hi, my name is Isak Graarud \n My professional journey began at Elvebakken (Class of 2022) and quickly moved into the Royal Norwegian Air Force. Serving as an OR1 through OR2 at the Wing Operation Centers in Bardufoss and Ørland, \n Where I developed a disciplined approach to technical problem-solving under pressure. Witch I now try to apply to my BSc in Informatics: Data Technology.",
+  "story": "Beyond the classroom in Bergen, I am deeply committed to the student community.\n As the Finance Manager and Board Member for ECHO Sports Club (ESC), I manage budgets and lead our Padel group.\n Additionally, as a board member for Hyggkom, I oversee social activities that bridge the gap between rigorous study and a healthy social environment in our faculty reading rooms."
   },
   "socials": {
     "github": "https://github.com/Isakgraarud",
@@ -11,11 +11,51 @@
   "education": [
     {
       "name": "BSc in Informatics: Data Technology",
-      "meta": "University of Bergen (UiB) • 2024 - 2027"
+      "meta": "University of Bergen (UiB) • 2024 – 2027",
+      "courses": [
+        {"name":  "PLACEHOLDER", "meta": "2027" },
+        {"name":  "PLACEHOLDER", "meta": "2027" },
+        {"name":  "PLACEHOLDER", "meta": "2027" },
+
+        { "name":  "PLACEHOLDER", "meta": "2026" },
+        { "name": "INF226 – Software Security", "meta": "2026" },
+        { "name": "INF214 – Concurrent Programming", "meta": "2026" },
+
+        { "name": "INF222 – Programming Languages", "meta": "2026" },
+        { "name": "Examen Philosophicum", "meta": "2026" },
+        { "name": "INF112 – Introduction to Systems Development", "meta": "2026" },
+
+        { "name": "INF122 – Functional Programming", "meta": "2025" },
+        { "name": "INF113 – Introduction to Operating Systems", "meta": "2025" },
+        { "name": "INF102 – Algorithms, Data Structures and Programming", "meta": "2025" },
+
+        { "name": "INF115 – Databases and Modelling", "meta": "2025" },
+        { "name": "MNF130 – Discrete Structures", "meta": "2025" },
+        { "name": "INF101 – Programming II", "meta": "2025" },
+
+        { "name": "MAT101 – Elementary Calculus I", "meta": "2024" },
+        { "name": "INF140 – Introduction to Cybersecurity", "meta": "2024" },
+        { "name": "INF100 – Introduction to Programming", "meta": "2024" }
+      ]
     },
     {
-      "name": "Electrical Engineering & Environmental Studies (ELST)",
-      "meta": "Elvebakken High School • 2019 - 2022"
+      "name": "Electrical Power and Electronic Communication",
+      "meta": "Elvebakken High School • 2019 – 2022",
+      "courses": [
+        { "name": "REA3064 – Programmering og modellering X", "meta": "2022" },
+        { "name": "REA3038 – Fysikk 1", "meta": "2022" },
+        { "name": "NOR1211/12/13 – Norsk (Hovedmål, sidemål, muntlig)", "meta": "2022" },
+        { "name": "HIS1003 – Historie", "meta": "2022" },
+        { "name": "SAK1001 – Samfunnskunnskap", "meta": "2022" },
+        { "name": "REA3022 – Matematikk R1", "meta": "2021" },
+        { "name": "ELE2001/2/3 – Elenergi-, automatiserings- og datasystemer vg2", "meta": "2021" },
+        { "name": "ELE2004 – Tverrfaglig eksamen", "meta": "2021" },
+        { "name": "ENG1009 – Engelsk", "meta": "2021" },
+        { "name": "MAT1013 – Matematikk 1T", "meta": "2020" },
+        { "name": "NAT1002 – Naturfag", "meta": "2020" },
+        { "name": "ELE1001/2/3 – Data-, elenergi- og automatiseringssystemer vg1", "meta": "2020" },
+        { "name": "YFF4106/4207 – Yrkesfaglig fordypning (vg1 & vg2)", "meta": "2020–2021" }
+      ]
     }
   ]
 }
