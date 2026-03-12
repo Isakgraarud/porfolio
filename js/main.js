@@ -22,6 +22,12 @@ async function initDynamicContent() {
     document.getElementById('bio-intro').innerText = data.about.intro;
     document.getElementById('bio-story').innerText = data.about.story;
 
+    // 1b. Set profile image (if provided)
+    const photoEl = document.querySelector('.about-photo');
+    if (photoEl && data.about.image) {
+      photoEl.src = data.about.image;
+    }
+
     // 2. Fill in the Education List (expandable degrees with courses)
     const degreeList = document.getElementById('degree-list');
     if (degreeList && data.education) {
@@ -131,7 +137,7 @@ function initScrollAnimations() {
 
           // Optional: observe children with stagger
           const children = entry.target.querySelectorAll(
-            '.degree-item, .course-item, .gallery-item'
+            '.degree-item, .course-item'
           );
           if (children.length) {
             children.forEach((child, index) => {

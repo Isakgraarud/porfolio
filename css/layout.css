@@ -30,7 +30,7 @@
   transform: translateY(-50%);
   color: white;
   font-size: 2.0rem;
-  font-weight: 300;
+  font-weight: 600;
   text-decoration: none;
   z-index: 1;
 }
@@ -183,7 +183,12 @@
     gap: var(--space-xs);
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  .about-photo {
+    float: none;
+    width: 100%;
+    max-width: 280px;
+    margin-left: 0;
+    margin-bottom: var(--space-lg);
+    display: block;
   }
 }
