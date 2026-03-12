@@ -1,0 +1,71 @@
+/* ============================================
+   ANIMATIONS - Apple-style scroll reveals
+   ============================================ */
+
+/* Scroll-triggered reveal - elements start hidden */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children for sequential reveal */
+.animate-on-scroll.stagger-children .course-item,
+.animate-on-scroll.stagger-children .gallery-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-out-expo),
+              transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.animate-on-scroll.stagger-children .course-item.is-visible,
+.animate-on-scroll.stagger-children .gallery-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section transition - smooth tab switch */
+.page-section {
+  animation: sectionEnter var(--duration-normal) var(--ease-out-expo) forwards;
+}
+
+@keyframes sectionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button subtle scale on hover */
+.btn {
+  transform-origin: center;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 12px rgba(46, 164, 79, 0.25);
+}
+
+/* Card entrance - slight scale */
+.card {
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+              box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+/* Gallery item hover - lift effect */
+.gallery-item {
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+              box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
