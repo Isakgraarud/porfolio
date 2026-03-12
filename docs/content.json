@@ -1,0 +1,21 @@
+{
+  "about": {
+    "intro": "I am a second-year Data Technology student at the University of Bergen with a background in Air Force operations.",
+    "story": "My experience in the Air Force taught me to solve technical problems under pressure with precision and structure. I am now applying that discipline to programming and system understanding, motivated to develop practical solutions through collaboration and rapid learning."
+  },
+  "socials": {
+    "github": "https://github.com/Isakgraarud",
+    "linkedin": "https://www.linkedin.com/in/isak-graarud",
+    "email": "mailto:isak.graarud@gmail.com"
+  },
+  "education": [
+    {
+      "name": "BSc in Informatics: Data Technology",
+      "meta": "University of Bergen (UiB) • 2024 - 2027"
+    },
+    {
+      "name": "Electrical Engineering & Environmental Studies (ELST)",
+      "meta": "Elvebakken High School • 2019 - 2022"
+    }
+  ]
+}

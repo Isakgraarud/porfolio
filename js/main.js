@@ -4,10 +4,51 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDynamicContent();
   initTabNavigation();
   initScrollAnimations();
   initHashRouting();
 });
+
+/**
+ * Dynamic Content - Fetches bio and text from content.json
+ */
+async function initDynamicContent() {
+  try {
+    const response = await fetch('docs/content.json');
+    const data = await response.json();
+
+    // 1. Fill in the Bio
+    document.getElementById('bio-intro').innerText = data.about.intro;
+    document.getElementById('bio-story').innerText = data.about.story;
+
+    // 2. Fill in the Education List
+    const educationContainer = document.querySelector('.course-list');
+    if (educationContainer) {
+      educationContainer.innerHTML = ''; // Clear the placeholders
+      data.education.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'course-item';
+        li.innerHTML = `
+          <span class="course-name">${item.name}</span>
+          <span class="course-meta">${item.meta}</span>
+        `;
+        educationContainer.appendChild(li);
+      });
+    }
+
+    // 3. Update Social Links (optional but handy)
+    const githubLinks = document.querySelectorAll('a[href*="github.com"]');
+    githubLinks.forEach(link => link.href = data.socials.github);
+
+    // Refresh animations so the new items fade in correctly
+    if (window.triggerScrollAnimations) {
+      window.triggerScrollAnimations();
+    }
+  } catch (error) {
+    console.error('Error loading content:', error);
+  }
+}
 
 /**
  * Tab navigation - switches between page sections
